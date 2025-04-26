@@ -138,8 +138,8 @@ h1 {
     height: 90vw;
     max-width: 450px;
     max-height: 450px;
-    margin: 0 auto;
-    margin-bottom: 15px;
+    margin: 0 auto 10px;
+    margin-bottom: 10px;
     flex-shrink: 1;
     min-height: 250px;
     left: -15px;
