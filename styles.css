@@ -44,7 +44,6 @@ body {
 
 h1 {
     text-align: center;
-    margin-top: 20px;
     margin-bottom: 30px;
     font-weight: 200;
     color: #000;
@@ -134,15 +133,15 @@ h1 {
 
 .letter-circle {
     position: relative;
-    width: 80vw;
-    height: 80vw;
-    max-width: 450px;
-    max-height: 450px;
-    margin: 0 auto 10px;
+    width: 60vw;
+    height: 60vw;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto 50px;
     flex-shrink: 1;
     min-height: 250px;
-    left: -15px;
-    right: 15px;
+    left: -20px;
+    right: 20px;
 }
 
 .letter {
@@ -169,8 +168,15 @@ h1 {
 }
 
 .solution-area {
-    margin: 10px 0;
-    flex-shrink: 0;
+    position: fixed;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    padding: 15px 0;
+    background-colour: white;
+    z-index: 90;
 }
 
 #solution-spaces {
@@ -224,7 +230,7 @@ h1 {
     left: 0;
     right: 0;
     background-color: white;
-    z-index;
+    z-index: 100;
 }
 
 .controls button {
