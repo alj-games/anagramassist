@@ -142,6 +142,21 @@ h1 {
     min-height: 250px;
     left: -20px;
     right: 20px;
+    transform-origin: calc(50% + 12px) center;
+}
+
+@keyframes spinCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg); /* Two full rotations */
+  }
+}
+
+.letter-circle.spinning {
+  animation: spinCircle 1.5s cubic-bezier(0.4, 0.0, 0.6, 1.0);
+  transform-origin: calc(50% + 12px) center;
 }
 
 .letter {
