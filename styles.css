@@ -138,11 +138,11 @@ h1 {
     height: 80vw;
     max-width: 450px;
     max-height: 450px;
-    margin: 0 auto 20px;
+    margin: 0 auto 10px;
     flex-shrink: 1;
     min-height: 250px;
-    left: -20px;
-    right: 20px;
+    left: -15px;
+    right: 15px;
 }
 
 .letter {
