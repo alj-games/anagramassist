@@ -44,6 +44,7 @@ body {
 
 h1 {
     text-align: center;
+    margin-top: 20px;
     margin-bottom: 30px;
     font-weight: 200;
     color: #000;
@@ -133,10 +134,10 @@ h1 {
 
 .letter-circle {
     position: relative;
-    width: 60vw;
-    height: 60vw;
-    max-width: 400px;
-    max-height: 400px;
+    width: 80vw;
+    height: 80vw;
+    max-width: 450px;
+    max-height: 450px;
     margin: 0 auto 50px;
     flex-shrink: 1;
     min-height: 250px;
