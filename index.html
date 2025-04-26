@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200;1,200&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200&display=swap&text=%E2%86%BA%E2%86%BB" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Anagram Assist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ANAGRAM|ASSIST</h1>
+        
+	<div class="input-overlay" id="input-overlay">
+	    <div class="input-container">
+	        <h2>ANAGRAM|ASSIST</h2>
+	        <input type="text" id="anagram-input" placeholder="Enter letters">
+	        <button id="start-button">⇾</button>
+	    </div>
+	</div>
+        
+        <div class="game-section" style="display: none;">
+            <div class="letter-circle" id="letter-circle">
+                <!-- Letters will be added here dynamically -->
+            </div>
+            
+            <div class="solution-area">
+                <div id="solution-spaces">
+                    <!-- Spaces will be added here dynamically -->
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="help-button" title="Help">?</button>
+                <button id="reset-button" title="Reset">&#8634;</button>
+                <button id="shuffle-button" title="Shuffle">&#8635;</button>
+		<button id="new-button" title="New Anagram">+</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Help Overlay -->
+    <div class="help-overlay" id="help-overlay">
+        <div class="help-container">
+            <h2>HELP</h2>
+            <p>&#8634; : Clear solution</p>
+            <p>&#8635; : Shuffle circle</p>
+            <p>+ : New anagram</p>
+            <p>To use word|separators in your solution, include a forward/slash when entering your letters.<br>EXA/MPLE = _ _ _ | _ _ _ _</p>
+            <button id="close-help-button">X</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
