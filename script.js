@@ -365,18 +365,30 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLetterStates();
     }
     
-        // Shuffle the letters in the circle
-        function shuffleLetters() {
-            // Fisher-Yates shuffle algorithm for ALL letters
-            for (let i = letters.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                // Swap values in the letters array
-                [letters[i], letters[j]] = [letters[j], letters[i]];
-            }
+	function shuffleLetters() {
+	    // Add spinning class to trigger animation
+	    letterCircle.classList.add('spinning');
     
-        buildLetterCircle();
-        updateLetterStates();
-    }
+	    // Schedule the shuffle to happen during the fastest part of the spin
+	    setTimeout(() => {
+	        // Fisher-Yates shuffle algorithm
+	        for (let i = letters.length - 1; i > 0; i--) {
+	            const j = Math.floor(Math.random() * (i + 1));
+	            // Swap values in the letters array
+	            [letters[i], letters[j]] = [letters[j], letters[i]];
+	        }
+
+	        // Rebuild the circle with the new arrangement
+	        buildLetterCircle();
+	        updateLetterStates();
+        
+	    }, 600); // Around 40% into the animation when spin is fast
+	    
+	    // Remove the spinning class after the animation completes
+	    setTimeout(() => {
+	        letterCircle.classList.remove('spinning');
+	    }, 1500); // Match this to the full animation duration
+	}
 
 	// Show help overlay
 	function showHelp() {
