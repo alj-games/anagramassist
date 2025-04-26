@@ -138,13 +138,10 @@ h1 {
     height: 90vw;
     max-width: 450px;
     max-height: 450px;
-    margin: 0 auto 15px;
+    margin: 0 auto;
     margin-bottom: 10px;
     flex-shrink: 1;
     min-height: 250px;
-    left: -15px;
-    right: 15px;
-    transform-origin: calc(50% + 7.5px) center;
 }
 
 @keyframes spinCircle {
@@ -158,7 +155,6 @@ h1 {
 
 .letter-circle.spinning {
   animation: spinCircle 1.5s cubic-bezier(0.4, 0.0, 0.6, 1.0);
-  transform-origin: calc(50% + 7.5px) center;
 }
 
 .letter {
