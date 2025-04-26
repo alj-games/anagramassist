@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (selectedPositionIndex !== null) {
             // If a specific position is selected
             const targetSpace = solutionSpaceElements.find(space => 
-                parseInt(space.dataset.index) === selectedPositionIndex
+                parseInt(space.dataset.letterIndex) === selectedPositionIndex
             );            
            
             if (targetSpace) {
