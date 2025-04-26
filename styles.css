@@ -133,16 +133,16 @@ h1 {
 
 .letter-circle {
     position: relative;
-    width: 60vw;
-    height: 60vw;
-    max-width: 400px;
-    max-height: 400px;
-    margin: 0 auto 50px;
+    width: 80vw;
+    height: 80vw;
+    max-width: 450px;
+    max-height: 450px;
+    margin: 0 auto 20px;
     flex-shrink: 1;
     min-height: 250px;
-    left: -20px;
-    right: 20px;
-    transform-origin: calc(50% + 12px) center;
+    left: -15px;
+    right: 15px;
+    transform-origin: calc(50% + 8px) center;
 }
 
 @keyframes spinCircle {
@@ -156,7 +156,7 @@ h1 {
 
 .letter-circle.spinning {
   animation: spinCircle 1.5s cubic-bezier(0.4, 0.0, 0.6, 1.0);
-  transform-origin: calc(50% + 12px) center;
+  transform-origin: calc(50% + 8px) center;
 }
 
 .letter {
