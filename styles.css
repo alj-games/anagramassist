@@ -139,10 +139,11 @@ h1 {
     max-width: 450px;
     max-height: 450px;
     margin: 0 auto 7.5px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     flex-shrink: 1;
     min-height: 250px;
-    transform: translateX(calc(-15px * min(1, 100vw/500px)));
+    left: -15px;
+    right: 15px;
     transform-origin: calc(50% + 7.5px) center;
 }
 
