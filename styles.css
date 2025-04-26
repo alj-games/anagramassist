@@ -134,8 +134,8 @@ h1 {
 
 .letter-circle {
     position: relative;
-    width: 100vw;
-    height: 100vw;
+    width: 90vw;
+    height: 90vw;
     max-width: 500px;
     max-height: 500px;
     margin: 0 auto 10px;
