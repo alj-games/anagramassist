@@ -142,6 +142,7 @@ h1 {
     margin-bottom: 10px;
     flex-shrink: 1;
     min-height: 250px;
+    right: 3.5%;
 }
 
 @keyframes spinCircle {
