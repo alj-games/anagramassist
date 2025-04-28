@@ -142,7 +142,7 @@ h1 {
     margin-bottom: 10px;
     flex-shrink: 1;
     min-height: 250px;
-    right: 2.5%;
+    right: 3.5%;
 }
 
 @keyframes spinCircle {
@@ -155,7 +155,7 @@ h1 {
 }
 
 .letter-circle.spinning {
-  animation: spinCircle 1.5s cubic-bezier(0.4, 0.0, 0.6, 1.0);
+  animation: spinCircle 1.5s cubic-bezier(0.4, 0.0, 0.6, 1.0);   
 }
 
 .letter {
