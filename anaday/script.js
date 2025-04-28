@@ -597,7 +597,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navigate to Anagram Assist
     function navigateToAssist() {
         // In a real implementation, this would navigate to the Anagram Assist app
-        window.location.href = '../anagramassist/index.html';
+        window.location.href = 'https://alj-games.github.io/anagramassist/';
     }
     
     // Add shake animation for incorrect answers
