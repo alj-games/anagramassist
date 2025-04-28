@@ -165,8 +165,8 @@ h1 {
 
 .timer-container {
     position: absolute;
-    top: calc(50%; + 100px)
-    left: calc(50%; - 3.5%)
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 100px;
     height: 100px;
