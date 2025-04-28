@@ -160,13 +160,13 @@ h1 {
     min-height: 250px;
     margin: 0 auto;
     margin-bottom: 10px;
-    top: 5%;
+    top: 3%;
     right: 3.5%;
 }
 
 .timer-container {
     position: absolute;
-    top: 35%;
+    top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100px;
