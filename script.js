@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const helpButton = document.getElementById('help-button');
     const helpOverlay = document.getElementById('help-overlay');
     const closeHelpButton = document.getElementById('close-help-button');
+    const backToADayButton = document.getElementById('back-to-anaday');
     
     // App state
     let letters = [];
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     shuffleButton.addEventListener('click', shuffleLetters);
     helpButton.addEventListener('click', showHelp);
     closeHelpButton.addEventListener('click', hideHelp);
+    backToADayButton.addEventListener('click', navigateToADay);  
 
     // Enter key event listener
     document.getElementById('anagram-input').addEventListener('keydown', function(event) {
@@ -423,4 +425,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	    helpOverlay.style.opacity = '0';
 	    helpOverlay.style.visibility = 'hidden';
 	}
+
+    function navigateToADay() {
+        window.location.href = 'https://alj-games.github.io/anagramassist/anaday/';
+    }
 });
