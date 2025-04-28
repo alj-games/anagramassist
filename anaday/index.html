@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200;1,200&family=Murecho:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200&display=swap&text=%E2%86%BA%E2%86%BB" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=bar_chart" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Anagram A Day</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ANAGRAM|A|DAY</h1>
+        
+        <div class="input-overlay" id="input-overlay">
+            <div class="input-container">
+                <h2>ANAGRAM|A|DAY</h2>
+		<p>1 word.</p>
+                <p>1 minute.</p>
+                <p>Every day.</p>
+                <button id="start-button">⇾</button>
+                <div class="button-spacer"></div>
+                <button id="back-to-assist" class="secondary-button">⇽</button>
+            </div>
+        </div>
+        
+        <div class="game-section" style="display: none;">
+            <div class="letter-circle" id="letter-circle">
+                <!-- Letters will be added here dynamically -->
+	    </div>
+            <div class="timer-container" id="timer-container">
+                <div class="timer" id="timer">3:00</div>
+            </div>
+        </div>
+            
+            <div class="solution-area">
+                <div id="solution-spaces">
+                    <!-- Spaces will be added here dynamically -->
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="help-button" title="Help">?</button>
+                <button id="reset-button" title="Reset">&#8634;</button>
+                <button id="shuffle-button" title="Shuffle">&#8635;</button>
+                <button id="submit-button" title="Submit Answer">✓</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Help Overlay -->
+    <div class="help-overlay" id="help-overlay">
+        <div class="help-container">
+            <h2>HELP</h2>
+            <p>&#8634; : Clear solution</p>
+            <p>&#8635; : Shuffle circle</p>
+            <p> <span style="font-family: 'Murecho', sans-serif; font-weight: 400; color: #000;">✓</span> : Submit answer</p>
+            <button id="close-help-button">X</button>
+        </div>
+    </div>
+
+    <!-- Result Overlay -->
+    <div class="result-overlay" id="result-overlay">
+        <div class="result-container" id="result-container">
+            <h2 id="result-title">SOLVED</h2>
+                    <p id="result-message">Well done.</p>
+            <p id="result-word">The word was: <span id="correct-word">EXCELLENT</span></p>
+            <p id="result-time">Time remaining: <span id="time-remaining">2:34</span></p>
+	    <button id="stats-button" class="action-button">
+		   <span class="material-symbols-outlined">bar_chart</span>
+	          </button>
+            <button id="back-to-menu-button">⇾</button>
+        </div>
+    </div>
+
+     <div id="stats-overlay" class="overlay">
+	   <div class="overlay-content">
+	        <h2>STATS</h2>
+	        <div class="stats-grid">
+	            <div class="stat-box">
+	                <span id="stats-streak" class="stat-number">0</span>
+	                <span class="stat-label">Streak</span>
+	            </div>
+	            <div class="stat-box">
+	                <span id="stats-solved" class="stat-number">0</span>
+	                <span class="stat-label">Solved</span>
+	            </div>
+	            <div class="stat-box">
+	                <span id="stats-failed" class="stat-number">0</span>
+	                <span class="stat-label">Failed</span>
+	            </div>
+	            <div class="stat-box">
+	                <span id="stats-fast" class="stat-number">0</span>
+	                <span class="stat-label">Under 30</span>
+	            </div>
+	        </div>
+	        <button id="close-stats-button" class="action-button">X</button>
+	    </div>
+	</div>
+    
+    <script src="anagramWords.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
