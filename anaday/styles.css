@@ -148,6 +148,7 @@ h1 {
     transition: opacity 0.5s;
     text-align: center;
     overflow: hidden;
+    position: relative;
 }
 
 .letter-circle {
@@ -165,7 +166,7 @@ h1 {
 
 .timer-container {
     position: absolute;
-    top: 45%;
+    top: 37.5%;
     left: 52%;
     transform: translate(-50%, -50%);
     width: 100px;
