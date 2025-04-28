@@ -120,6 +120,36 @@ h1 {
     color: white;
 }
 
+.secondary-button {
+    padding: 5px 10px;
+    background-color: white;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-size: 28px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.secondary-button:hover {
+    background-color: #000;
+    color: white;
+}
+
+.input-container h3 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .game-section {
     width: 100%;
     height: 100%;
