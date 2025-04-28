@@ -267,18 +267,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function selectLetter(index) {
         const letter = letters[index];
         
-        if (letter.used) {
-            // If the letter is already used, remove it from solution
-            removeLetterFromSolution(letter.value);
-            letter.used = false;
-        } else {
-            // If not used, add it to solution
-            addLetterToSolution(letter.value, index);
-            letter.used = true;
-        }
+      if (letter.used) {
+          // Remove this specific letter instance from solution
+          removeLetterFromSolution(letter.value, index);
+          letter.used = false;
+      } else {
+          // If not used, add it to solution
+          addLetterToSolution(letter.value, index);
+          letter.used = true;
+      }
         
-	// Update letter states without moving them
-	updateLetterStates();
+  	updateLetterStates();
     }
 
 	// Update the visual state of letters without moving them
@@ -295,53 +294,74 @@ document.addEventListener('DOMContentLoaded', function() {
 	    });
 	}
     
-    // Add letter to solution
-    function addLetterToSolution(letterValue, letterIndex) {
-        const solutionSpaceElements = Array.from(document.querySelectorAll('.solution-space:not(.separator)'));
-        
-        if (selectedPositionIndex !== null) {
-            // If a specific position is selected
-            const targetSpace = solutionSpaceElements.find(space => 
-                parseInt(space.dataset.letterIndex) === selectedPositionIndex
-            );            
-           
-            if (targetSpace) {
-		if (targetSpace.textContent) {
-                    letters.forEach(l => {
-                        if (l.value === targetSpace.textContent && l.used) {
-                            l.used = false;
-                        }
-                    });
-                }
-            
-                // Set the new letter
-                targetSpace.textContent = letterValue;
-            
-                // Clear the selection
-                targetSpace.classList.remove('active');
-                selectedPositionIndex = null;
-	    }
-        } else {
-            // Find the first empty space
-            const emptySpace = solutionSpaceElements.find(space => !space.textContent);
-            if (emptySpace) {
-                emptySpace.textContent = letterValue;
-            }
-        }
-    }
+	function addLetterToSolution(letterValue, letterIndex) {
+	    const solutionSpaceElements = Array.from(document.querySelectorAll('.solution-space:not(.separator)'));
     
-    // Remove letter from solution
-    function removeLetterFromSolution(letterValue) {
-        const solutionSpaceElements = Array.from(document.querySelectorAll('.solution-space:not(.separator)'));
+	    if (selectedPositionIndex !== null) {
+	        // If a specific position is selected
+	        const targetSpace = solutionSpaceElements.find(space => 
+	            parseInt(space.dataset.letterIndex) === selectedPositionIndex
+	        );            
+	       
+	        if (targetSpace) {
+	            if (targetSpace.textContent) {
+	                const oldValue = targetSpace.textContent;
+	                const oldLetterIndex = targetSpace.dataset.sourceIndex;
+	                
+	                if (oldLetterIndex !== undefined) {
+	                    // If we know which letter object this came from, mark it unused
+	                    letters[parseInt(oldLetterIndex)].used = false;
+	                } else {
+	                    // Otherwise fall back to searching by value (less reliable)
+	                    letters.forEach(l => {
+	                        if (l.value === oldValue && l.used) {
+	                            l.used = false;
+	                        }
+	                    });
+	                }
+	            }
         
-        // Find the space containing this letter and clear it
-        for (const space of solutionSpaceElements) {
-            if (space.textContent === letterValue) {
-                space.textContent = '';
-                break;
-            }
-        }
-    }
+	            // Set the new letter
+	            targetSpace.textContent = letterValue;
+	            targetSpace.dataset.sourceIndex = letterIndex;
+        
+	            // Clear the selection
+	            targetSpace.classList.remove('active');
+	            selectedPositionIndex = null;
+	        }
+	    } else {
+	        // Find the first empty space
+	        const emptySpace = solutionSpaceElements.find(space => !space.textContent);
+	        if (emptySpace) {
+        	    emptySpace.textContent = letterValue;
+	            emptySpace.dataset.sourceIndex = letterIndex;  // Add this line
+	        }
+	    }
+	}
+    
+	function removeLetterFromSolution(letterValue, letterIndex = null) {
+	    const solutionSpaceElements = Array.from(document.querySelectorAll('.solution-space:not(.separator)'));
+    
+	    if (letterIndex !== null) {
+	        // If we know which specific letter object to remove
+	        for (const space of solutionSpaceElements) {
+	            if (space.dataset.sourceIndex === letterIndex.toString()) {
+	                space.textContent = '';
+	                delete space.dataset.sourceIndex;
+	                return;
+	            }
+	        }
+	    }
+    
+	    // Fallback: find the first space with this letter value
+	    for (const space of solutionSpaceElements) {
+	        if (space.textContent === letterValue) {
+	            space.textContent = '';
+	            delete space.dataset.sourceIndex;
+	            break;
+	        }
+	    }
+	}
     
     // Reset the game
     function resetGame() {
@@ -353,6 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const solutionSpaceElements = document.querySelectorAll('.solution-space:not(.separator)');
         solutionSpaceElements.forEach(space => {
             space.textContent = '';
+            delete space.dataset.sourceIndex;
         });
         
         // Reset selected position
@@ -365,6 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLetterStates();
     }
     
+	// Shuffle the letters in the circle
 	function shuffleLetters() {
 	    // Add spinning class to trigger animation
 	    letterCircle.classList.add('spinning');
