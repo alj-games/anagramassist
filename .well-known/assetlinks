@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.aljg_anagramassist.twa",
+        "sha256_cert_fingerprints": ["86:EC:3C:C8:EF:28:F9:34:AB:78:B9:8C:03:4B:DF:70:D4:3E:26:9C:CD:C4:7E:84:ED:09:8C:BE:22:82:3D:78"]
+      }
+    }]
